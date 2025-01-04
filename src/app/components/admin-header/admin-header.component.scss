@@ -1,0 +1,18 @@
+.admin-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 4px 19px;
+}
+
+.user-icon{
+    border: 1px solid #dfe7f0;
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; 
+    color: #616569;
+}
