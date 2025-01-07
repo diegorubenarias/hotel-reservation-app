@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Menu } from 'primeng/menu';
 import { BadgeModule } from 'primeng/badge';
 import { OverlayBadgeModule } from 'primeng/overlaybadge';
 import { Avatar } from 'primeng/avatar';
 import { AvatarGroup } from 'primeng/avatargroup';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-menu',
@@ -14,6 +15,8 @@ import { MenuItem } from 'primeng/api';
   styleUrl: './admin-menu.component.scss'
 })
 export class AdminMenuComponent implements OnInit{
+
+  router = inject(Router);
 
   items: MenuItem[] | undefined ;
   ngOnInit() {
@@ -26,16 +29,43 @@ export class AdminMenuComponent implements OnInit{
             items: [
                 {
                     label: 'Tablero',
-                    icon: 'pi pi-home'
+                    icon: 'pi pi-home',
+                    command: () => {
+                      this.router.navigate(['/admin-dashboard/home']);
+                    }
                 }
             ]
         },
         {
             label: 'Configuracion',
             items: [
+                  {
+                    label: 'Tipo de Inmueble',
+                    icon: 'pi pi-cog',
+                    command: () => {
+                      this.router.navigate(['/admin-dashboard/realStateType']);
+                    }
+                },
                 {
-                    label: 'Categorias',
-                    icon: 'pi pi-cog'
+                    label: 'Tipos de habitacion',
+                    icon: 'pi pi-cog',
+                    command: () => {
+                      this.router.navigate(['/admin-dashboard/categories']);
+                    }
+                },
+                {
+                  label: 'Habitacion',
+                  icon: 'pi pi-cog',
+                  command: () => {
+                    this.router.navigate(['/admin-dashboard/roomTypes']);
+                  }
+                },
+                {
+                  label: 'Inmueble',
+                  icon: 'pi pi-cog',
+                  command: () => {
+                    // Add your router redirection logic here
+                  }
                 },
                 {
                     label: 'Cerrar Sesion',

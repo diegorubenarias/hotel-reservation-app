@@ -1,0 +1,26 @@
+<div class="add-type">
+    
+</div>
+
+<p-table [value]="types" [tableStyle]="{ 'min-width': '60rem' }">
+    <ng-template pTemplate="caption">
+        <div class="flex items-center justify-between">
+            <span class="text-xl font-bold">Tipos de Inmuebles</span>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Codigo</th>
+            <th>Descripcion</th>
+            
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-type>
+        <tr>
+            <td>{{ type.ccode }}</td>
+             <td>{{ type.description }}</td>
+          
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="footer"> En total hay {{ types ? types.length : 0 }} tipos de inmuebles. </ng-template>
+</p-table>

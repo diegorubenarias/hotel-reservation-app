@@ -4,3 +4,37 @@
     align-items: center;
     padding-top: 2vh;
 }
+
+.left-side {
+    width: 18%; 
+    height: 94vh; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    background-color: #f7f9fc;
+    color: black; 
+    border-radius: 6px;
+}
+
+.logo {
+    height: 7vh;
+    width: 100%; 
+}
+
+.header {
+    width: 80%; 
+    height: 7vh; 
+    position: fixed; 
+    top: 0; 
+    left: 20%; 
+}
+
+.content{
+    width: 85%; 
+    height: 95vh; 
+    position: fixed; 
+    top: 8vh; 
+    left: 14%; 
+    overflow-y: auto;  
+    overflow: hidden;
+}
